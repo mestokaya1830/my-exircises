@@ -1,0 +1,6 @@
+ 
+ playAsound(){
+   const audio = new Audio('../../live-odds.wav'); // path to file
+   audio.play();
+ }
+

@@ -1,0 +1,17 @@
+
+{
+  "compilerOptions": {
+
+    "rootDir": "./",            // TypeScript kaynak dosyalarının kök dizini
+    "outDir": "./dist",            // Derlenen JS dosyalarının çıktı dizini
+
+    "module": "nodenext",          // Node.js'in yerel ESM/CJS modül çözümleme sistemini kullan
+    "target": "esnext",            // En güncel JavaScript sürümüne derle (ES2024+)
+
+    "sourceMap": true,             // .js.map dosyaları üret → hata ayıklamada orijinal TS satırlarını gösterir
+
+    "strict": true,                // Tüm katı tip denetim kurallarını etkinleştir (noImplicitAny, strictNullChecks vb.)
+    "moduleDetection": "auto",    // Her dosyayı otomatik olarak modül say (export olmasa bile)
+    "skipLibCheck": true,          // node_modules içindeki .d.ts dosyalarını denetleme → derlemeyi hızlandırır
+  }
+}

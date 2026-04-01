@@ -1,0 +1,30 @@
+import { createRouter, createWebHistory } from 'vue-router'
+import HomeView from '../views/HomeView.vue'
+
+const router = createRouter({
+  history: createWebHistory(import.meta.env.BASE_URL),
+  routes: [
+    {
+      path: '/',
+      name: 'home',
+      component: HomeView
+    },
+    {
+      path: '/users',
+      name: 'UserView',
+      component: () => import('../views/UsersView.vue')
+    },
+    {
+      path: '/users/:id',
+      name: 'UsersDetailsView',
+      component: () => import('../views/UsersDetailsView.vue')
+    },
+    {
+      path: '/:catchAll(.*)',
+      name: 'NotFound',
+      component: () => import('../views/NotFound.vue')
+    }
+  ]
+})
+
+export default router

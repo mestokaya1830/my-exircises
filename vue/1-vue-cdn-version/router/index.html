@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .title {
+      text-align: center;
+      font-weight: bold;
+      margin-top: 40px;
+      font-size:30px;
+    }
+    .router{
+      display: flex;
+    }
+    .router .links{
+      padding: 10px 20px;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body class="h-full grid place-items-center">
+  <div id="app">
+    <div class="router">
+      <router-link class="links" to="/">Home</router-link>
+      <router-link class="links" to="/about">About</router-link>
+      <router-link class="links" to="/contact">Contact</router-link>
+    </div>
+    <router-view></router-view>
+  </div>
+
+
+  <script src="./vue3.js"></script>
+  <script src="./router.js"></script>
+  <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> -->
+  
+  <script type="module">
+    import HomePage from  './home.js'
+    import AboutPAge from  './about.js'
+    import ContactPage from  './contact.js'
+
+    const Home = { template: HomePage }
+    const About = { template: AboutPAge }
+    const Contact = { template: ContactPage }
+
+    const routes = [
+      { path: '/', component: Home },
+      { path: '/about', component: About },
+      { path: '/contact', component: Contact },
+    ]
+
+    const router = VueRouter.createRouter({
+      history: VueRouter.createWebHashHistory(),
+      routes,
+    })
+
+    const app = Vue.createApp({})
+    app.use(router)
+    app.mount('#app')
+  </script>
+</body>
+
+</html>

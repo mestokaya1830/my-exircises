@@ -1,0 +1,41 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+.navbar{
+  display: flex;
+  align-items: center;
+  height: 60px;
+  padding: 0 20px;
+}
+
+.router{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 30px;
+}
+
+.active{color: green;}
+.links{
+  margin: 0 15px;
+  font-size: 18px;
+  text-decoration: none;
+}
+.inputs{
+  height: 34px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding-left: 7px;
+  font-size: 16px;
+}
+.btn{
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 18px;
+  padding: 7px 15px;
+  cursor: pointer;
+}

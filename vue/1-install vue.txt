@@ -1,0 +1,12 @@
+create project------------------------------------------
+npm create vue@latest     //with vue
+
+npm create vite@latest    //with vite
+
+npm install -g @vue/cli    //with cli
+vue create projectname
+
+npm i vue-router@4 --save
+
+npm i @vitejs/plugin-vue
+

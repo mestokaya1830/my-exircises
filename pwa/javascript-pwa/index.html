@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="red">
+    <meta name="apple-mobile-web-app-status-bar" content="#ddd">
+    <title>Home</title>
+    <link rel="manifest" href="./manifest.json">
+    <link rel="stylesheet" href="./assets/icons/icon_x64.png">
+    <link rel="apple-touch-icon" href="./assets/icons/icon_x64.png">
+    <link rel="stylesheet" href="./assets/main.css">
+</head>
+
+<body>
+    <ul class="navbar">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="pages/about.html">About</a></li>
+        <li><a href="pages/contact.html">Contact</a></li>
+    </ul>
+
+    <ul id="image-list">
+        <li><img src="./assets/images/1.png" alt=""></li>
+        <li><img src="./assets/images/2.png" alt=""></li>
+        <li><img src="./assets/images/3.png" alt=""></li>
+        <li><img src="./assets/images/4.png" alt=""></li>
+    </ul>
+    <script>
+        //service worker used for offline
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js').then(res => {
+                console.log(res)
+            }).catch((err) => {
+                console.log(err)
+            })
+        }
+    </script>
+</body>
+
+</html>

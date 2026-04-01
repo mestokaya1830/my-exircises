@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <div id="app">
+    <h1>{{title}}</h1>
+
+    <!-- in poroccess -->
+    <h2>In Proccess</h2>
+    <ul v-if="projects.filter(item =>  !item.completed).length">
+      <li v-for="item in projects.filter(item =>  item.completed == false)" :key="item.id">
+        <label for="">
+          {{item.name}}
+          <input type="checkbox" v-model="item.completed">
+        </label>
+      </li>
+    </ul>
+
+    <hr>
+    <!-- completed -->
+    <h2>Completed</h2>
+    <ul v-if="projects.filter(item =>  item.completed == true).length">
+      <li v-for="item in projects.filter(item => item.completed == true)" :key="item.id">
+        <label for="">
+          {{item.name}}
+          <input type="checkbox" v-model="item.completed">
+        </label>
+      </li>
+    </ul>
+
+    <hr>
+    <pre>
+      {{ projects }}
+    </pre>
+  </div>
+
+  <script src="./vue3.js"></script>
+  <script>
+    Vue.createApp({
+      name:'Index',
+      data () {
+        return {
+          title: 'Home',
+          projects:[
+            {id: 1, name: 'Html', completed: true},
+            {id: 2, name: 'Css', completed: true},
+            {id: 3, name: 'Javascript', completed: false}
+          ]
+        }
+      }
+    }).mount('#app')
+  </script>
+</body>
+</html>

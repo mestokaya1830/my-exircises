@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+
+    "rootDir": "./src",    // Kaynak dosyaların kök dizini
+    "outDir": "./dist",    // Derlenmiş JS çıktısının yazılacağı klasör
+
+    "module": "nodenext", // Node.js ESM/CJS hibrit modül sistemi
+    "target": "esnext",   // Modern Node.js sürümleri için ES2022+ çıktı
+    "types": ["node"],    // Sadece Node.js tipleri (npm install -D @types/node)
+    "lib": ["esnext"],    // Standart JS kütüphaneleri
+
+    "strict": true,                     // Tüm katı kontrolleri etkinleştir
+    "noUncheckedIndexedAccess": true,   // arr[0] → T | undefined olarak değerlendir
+    "exactOptionalPropertyTypes": true, // Opsiyonel alanlara undefined atanamaz
+
+    "verbatimModuleSyntax": true,         // import type kullanımını zorunlu kıl
+    "isolatedModules": true,              // Her dosyayı bağımsız derle
+    "noUncheckedSideEffectImports": true, // Yan etkili importları da kontrol et
+    "moduleDetection": "force",           // Her dosyayı otomatik modül say
+    "skipLibCheck": true                  // node_modules .d.ts hatalarını atla
+
+  }
+}

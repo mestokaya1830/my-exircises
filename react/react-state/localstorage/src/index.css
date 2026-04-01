@@ -1,0 +1,35 @@
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.navbar{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  background: #000;
+  padding: 0 20px;
+}
+.links{
+  color: #fff;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 22px;
+}
+.active{color: green;}
+.router{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.logout{
+  border: none;
+  background-color: transparent;
+  color: #fff;
+  font-size: 18px;
+}
+.logout:hover{
+  transform: scale(1.1);
+  cursor: pointer;
+}

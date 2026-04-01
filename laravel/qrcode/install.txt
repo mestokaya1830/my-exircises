@@ -1,0 +1,22 @@
+composer require simplesoftwareio/simple-qrcode
+config/app.php
+<?php
+    return [
+    'providers' => [
+        ....
+        ....
+        ....                
+        SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class,
+    ],
+    
+    'aliases' => [
+        ....
+        ....
+        ....                
+        'QrCode' => SimpleSoftwareIO\QrCode\Facades\QrCode::class,
+    ]
+    
+ sudo apt update
+ sudo apt install --assume-yes php-imagick
+ php --modules | grep imagick
+ sudo systemctl restart apache2

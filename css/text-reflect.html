@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body{
+      display: flex;
+      justify-content: center;
+      background-color: #580303;
+    }
+    h1{
+      position: relative;
+      color: azure;
+      margin-top: 250px;
+      font-size: 120px;
+      line-height: 80px;
+      letter-spacing: 15px;
+      text-transform: uppercase;
+      outline: none;
+      -webkit-box-reflect: below 1px linear-gradient(transparent, #580303);
+      animation: text 5s linear infinite;
+    }
+
+    @keyframes text {
+      0%, 10%, 20%, 60%, 70%, 80%, 90.1%, 90.2% {
+        color: #580303;
+        text-shadow: none;
+      }
+      18.1%, 20.1%, 30%, 50%, 60.1%, 65%, 80.1%, 90%, 90.2%, 100% {
+        color: #fff;
+        text-shadow: 0 0 10px azure,
+        0 0 20px azure,
+        0 0 40px azure,
+        0 0 80px azure,
+        0 0 160px azure;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Css Reflect</h1>
+</body>
+</html>

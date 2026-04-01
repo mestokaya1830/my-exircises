@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Selectbox Flat</title>
+	<link rel="stylesheet" href="../../icons/font-awesome.min.css">
+<style type="text/css" media="screen">
+body{
+	display: flex;
+	padding: 30px;
+}
+#sb1{
+	width:150px;
+	margin-right: 20px;
+	padding:5px;
+	font-family:Cursive;
+	line-height:1;
+	border-radius:3px;
+	background-color:#A2AB58;
+	color:#ff0;
+	font-size:20px;
+	-webkit-appearance:none;/*for self arrow remove*/
+	box-shadow:inset 0 0 3px 0 rgba(0,0,0,0.6);
+	background-image:url("../img/armenia.png");
+	background-repeat:no-repeat;
+	background-position:115px;
+}
+#sb1:hover {
+	color:#00ff7f
+}
+#sb2 select {
+	width:150px;
+	margin-right: 20px;
+	padding:5px;
+	line-height:1;
+	border-radius:3px;
+	background-color:#ccc;
+	font-size:20px;
+	-webkit-appearance:none;/*for self arrow remove*/
+}
+#sb2{
+	width:150px;
+	position: relative;
+}
+#sb2:after{
+	 content: '\2698';
+    color: #222;
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    font-size: 18px;
+}
+</style>
+</head>
+<body>
+		<select name="" id="sb1">
+			<option value="">Html5</option>
+			<option value="">Css3</option>
+			<option value="">Jquery</option>
+			<option value="">Php</option>
+			<option value="">Mysqli</option>
+		</select>
+	<div id="sb2">
+		<select name="" id="">
+			<option value="">Html5</option>
+			<option value="">Css3</option>
+			<option value="">Jquery</option>
+			<option value="">Php</option>
+			<option value="">Mysqli</option>
+		</select>
+	</div>
+</body>
+</html>

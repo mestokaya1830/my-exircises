@@ -1,0 +1,36 @@
+create two project and add index.html in it
+sudo nano /etc/nginx/sites-available/bet.com
+
+
+server {
+       listen 80;
+       listen [::]:80;
+       server_name server1.com;
+       root /var/www/bet;
+       index index.html;
+}
+server {
+       listen 80;
+       listen [::]:80;
+       server_name server2.com;
+       root /var/www/bet2;
+       index index.html;
+}
+
+sudo rm /etc/nginx/sites-enabled/default
+sudo ln -sf /etc/nginx/sites-available/bet.com /etc/nginx/sites-enabled/bet.com
+systemctl restart nginx
+and then
+sudo nano /etc/hosts
+add domains like so 127.0.0.1  localhost server1.com server2.com
+open browser type server1.com and server2.com
+
+
+
+
+
+
+
+
+
+

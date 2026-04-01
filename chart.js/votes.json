@@ -1,0 +1,42 @@
+[
+  {
+    "votes": 10,
+    "label": "JavaScript",
+    "color": "#f0db4f"
+  },
+  {
+    "votes": 8,
+    "label": "C#",
+    "color": "#903ba7"
+  },
+  {
+    "votes": 6,
+    "label": "Php",
+    "color": "#8993be"
+  },
+  {
+    "votes": 9,
+    "label": "Python",
+    "color": "#4584b6"
+  },
+  {
+    "votes": 3,
+    "label": "Go",
+    "color": "#00aed9"
+  },
+  {
+    "votes": 2,
+    "label": "Ruby",
+    "color": "darkred"
+  },
+  {
+    "votes": 8,
+    "label": "Java",
+    "color": "#f58312"
+  },
+  {
+    "votes": 6,
+    "label": "C++",
+    "color": "#00589d"
+  }
+]

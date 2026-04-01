@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    h1{margin: 30px 0;}
+    .container{
+      height: 60vh;
+      width: 30vw;
+      position: absolute;
+      top: 50vh;
+      left: 50vw;
+      transform: translate(-50%, -50%);
+      perspective: 1000px;
+    }
+    .cube{
+      height: 250px;
+      width: 250px;
+      position: absolute;
+      top: 100px;
+      left: 100px;
+      transform-style: preserve-3d;
+      transform: rotateY(30deg);
+      animation: ani 5s infinite;
+    }
+    .cube div {
+      height: 250px;
+      width: 250px;
+      text-align: center;
+      padding: 100px 0;
+      color: white;
+      background-color: black;
+      border: 3px solid #ccc;
+      font-size: 30px;
+      position: absolute;
+    }
+    #left{
+      right: 125px;
+      transform: rotateY(-90deg);
+    }
+    #right{
+      left: 125px;
+      transform: rotateY(90deg);
+    }
+    #top{
+      bottom: 125px;
+      transform: rotateX(90deg);
+    }
+    #bottom{
+      top: 125px;
+      transform: rotateX(-90deg);
+    }
+    #front{
+      transform: translateZ(125px);
+    }
+    #back{
+      transform: translateZ(-125px);
+    }
+    input{
+      width: 200px;
+      height: 40px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 18px;
+      cursor: pointer;
+      position: absolute;
+      left: 180px;
+      top: -40px;
+    }
+    input:focus~ .cube #front{
+      transform: translateZ(180px) rotateY(360deg);
+      background-color: red;
+    }
+    input:focus~ .cube #back{
+      transform: translateZ(-180px) rotateY(360deg);
+      background-color: red;
+    }
+    input:focus~ .cube #left{
+      left: -180px;
+      background-color: red;
+    }
+    input:focus~ .cube #right{
+      left: 180px;
+      background-color: red;
+    }
+    input:focus~ .cube #top{
+      bottom: 180px;
+      background-color: red;
+    }
+    input:focus~ .cube #bottom{
+      top: 180px;
+      background-color: red;
+    }
+    @keyframes ani {
+      0% {
+        transform: rotateX(45deg) rotateY(-45deg);
+      }
+      25% {
+        transform: rotateX(-45deg) rotateY(-45deg);
+      }
+      50% {
+        transform: rotateX(45deg) rotateY(45deg);
+      }
+      75% {
+        transform: rotateX(-45deg) rotateY(45deg);
+      }
+      100% {
+        transform: rotateX(45deg) rotateY(-45deg);
+      }
+    }
+    
+    #front:active{
+      transform: translateZ(180px) rotateY(360deg);
+      background-color: red;
+    }
+    #back:active{
+      transform: translateZ(-180px) rotateY(360deg);
+      background-color: red;
+    }
+    #left:active{
+      left: -180px;
+      background-color: red;
+    }
+    #right:active{
+      left: 180px;
+      background-color: red;
+    }
+    #top:active{
+      bottom: 180px;
+      background-color: red;
+    }
+    #bottom:active{
+      top: 180px;
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+  <h1>Css Cube</h1>
+  <div class="container">
+    <!-- this button  triggered in css input~ -->
+    <input type="button" value="Turn">
+    <div class="cube">
+      <div id="front">Front</div>
+      <div id="back">Back</div>
+      <div id="left">Left</div>
+      <div id="right">Right</div>
+      <div id="top">Top</div>
+      <div id="bottom">Bottom</div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+create the same projects 3 times and run with different ports
+sudo nano /etc/nginx/sites-available/bet.com
+
+upstream servers {
+	server 127.0.0.1:3001
+	server 127.0.0.1:3002
+	server 127.0.0.1:3003
+}
+
+server {
+       listen 80;
+       listen [::]:80;
+
+       server_name main;
+
+       #root /var/www/html;
+       index index.html;
+
+       location / {
+              proxy_pass http://servers
+       }
+}
+
+
+sudo rm /etc/nginx/sites-enabled/default
+sudo ln -sf /etc/nginx/sites-available/bet.com /etc/nginx/sites-enabled/bet.com
+systemctl restart nginx
+
+open browser type localhost and refresh browser and see port numbers
+
+
+
+
+
+
+
+
+

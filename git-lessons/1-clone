@@ -1,0 +1,6 @@
+create a repo on github or created github
+git clone http://www.github.com/mesyokaya1830/repo-name
+
+vscode login
+git config --global user.name "mestokaya"
+git config --global user.email "mesto1830@outlook.com"

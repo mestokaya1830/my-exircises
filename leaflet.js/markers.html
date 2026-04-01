@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./public/leaflet.css" />
+    <script src="./public/leaflet.js"></script>
+    <script src="./public/leaflet.rotatedMarker.js"></script>
+    <style>
+      #map {
+        width: 100vw;
+        height: 100vh;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+      //set map
+      let map = L.map("map").setView([37.065842, 37.37608], 12);
+
+      //add layer
+      L.tileLayer("http://{s}.tile.osm.org/{z}/{x}/{y}.png").addTo(map);
+
+      //add marker on layer
+      L.marker([37.065842, 37.37608], {
+        opacity: 0.5,
+        draggable: true,
+        title: "Gaziantep Buyuksehir",
+      }).addTo(map);
+
+      L.circle([37.065, 37.376], {
+        color: "red",
+        fillColor: "blue",
+        fillOpacity: 0.5,
+        radius: 400,
+      }).addTo(map);
+
+      L.polygon([
+        [37.035111, 37.444],
+        [37.095333, 37.3333],
+        [37.035999, 37.3444],
+      ]).addTo(map);
+
+      //marker rotation
+      map.on("click", (e) => {
+        var marker = new L.marker([e.latlng.lat, e.latlng.lng], {
+          rotationAngle: 145,
+          rotationOrigin: "bottom center",
+        }).addTo(map);
+      });
+    </script>
+  </body>
+</html>

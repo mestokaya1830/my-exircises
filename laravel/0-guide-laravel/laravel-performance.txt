@@ -1,0 +1,1 @@
+for get method use query-builder (faster way)DB::table('users')->select();

@@ -1,0 +1,30 @@
+create bet project and add index.html in it
+then create bet2project inside project bet and add index.html in it
+sudo nano /etc/nginx/sites-available/bet.com
+
+
+server {
+       listen 80;
+       listen [::]:80;
+       server_name 127.0.0.1;
+       root /var/www/bet;
+       index index.html;
+
+       location /bet2/ {
+       		root /var/www/bet;
+       }
+}
+
+sudo rm /etc/nginx/sites-enabled/default
+sudo ln -sf /etc/nginx/sites-available/bet.com /etc/nginx/sites-enabled/bet.com
+systemctl restart nginx
+
+
+
+
+
+
+
+
+
+

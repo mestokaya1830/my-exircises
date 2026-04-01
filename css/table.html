@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-image: url("./img/5.jpg");
+        background-size: cover;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 80vw;
+        height: auto;
+        background-color: #fff5;
+        backdrop-filter: blur(7px);
+        border-radius: 10px;
+        box-shadow: 0 5px 10px #333;
+        overflow: hidden;
+      }
+      h1 {
+        margin: 30px 0;
+        color: #f1f1f1;
+        font-size: 40px;
+      }
+      header {
+        display: flex;
+        align-items: center;
+        width: calc(80vw - 30px);
+        height: 40px;
+        font-size: 26px;
+        font-weight: bold;
+        background-color: #fff4;
+        padding: 10px 15px;
+      }
+      table {
+        width: calc(100% - 40px);
+        height: auto;
+        margin: 20px;
+        padding: 20px;
+        background-color: #fffb;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+      table, tr, td {
+        text-align: center;
+        border-collapse: collapse;
+      }
+      thead {
+        height: 54px;
+        line-height: 54px;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        background-color: #ccc;
+        border-bottom: 1px solid #ccc;
+      }
+      tbody > tr {
+        width: 100%;
+        border-bottom: 1px solid #ccc;
+      }
+      thead > tr {
+        font-size: 20px;
+      }
+      tr:nth-child(even) {
+        background-color: #fff2;
+        opacity: 0.6;
+      }
+      img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50px;
+      }
+      .state {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .active,
+      .in-active {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 120px;
+        height: 28px;
+        color: #fff;
+        background-color: darkcyan;
+        border-radius: 50px;
+      }
+      .in-active {
+        background-color: darkred;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Css Table</h1>
+    <div class="container">
+      <header>Users List</header>
+      <table>
+        <thead>
+          <tr>
+            <td>ID</td>
+            <td>User</td>
+            <td>Name</td>
+            <td>Age</td>
+            <td>Country</td>
+            <td>City</td>
+            <td class="state">State</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td><img src="./img/1.png" alt="" /></td>
+            <td>Mesto</td>
+            <td>30</td>
+            <td>Deutschland</td>
+            <td>Berlin</td>
+            <td class="state">
+              <p class="active">Active</p>
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td class="td-img"><img src="./img/2.png" alt="" /></td>
+            <td>Deniz</td>
+            <td>40</td>
+            <td>Schweiz</td>
+            <td>Zurich</td>
+            <td class="state">
+              <p class="active">Active</p>
+            </td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td class="td-img"><img src="./img/3.png" alt="" /></td>
+            <td>Faruk</td>
+            <td>40</td>
+            <td>Schweiz</td>
+            <td>Chur</td>
+            <td class="state">
+              <p class="in-active">InActive</p>
+            </td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td class="td-img"><img src="./img/4.jpg" alt="" /></td>
+            <td>Alex</td>
+            <td>50</td>
+            <td>USA</td>
+            <td>New York</td>
+            <td class="state">
+              <p class="active">Active</p>
+            </td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td class="td-img"><img src="./img/sport1.jpg" alt="" /></td>
+            <td>Alen</td>
+            <td>50</td>
+            <td>USA</td>
+            <td>New York</td>
+            <td class="state">
+              <p class="in-active">InActive</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

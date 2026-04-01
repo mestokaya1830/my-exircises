@@ -1,0 +1,45 @@
+create two nodejs project and run on different ports
+sudo nano /etc/nginx/sites-available/bet.com
+
+
+server {
+       listen 80;
+       listen [::]:80;
+       server_name server1.com;
+       index index.html;
+
+       location / {
+       	proxy_pass http://127.0.0.1:3000/;
+	proxy_set_header Host $host;
+    	proxy_set_header X-Real-IP $remote_addr;
+       }
+}
+server {
+       listen 80;
+       listen [::]:80;
+       server_name server2.com;
+       index index.html;
+
+       location / {
+       	proxy_pass http://127.0.0.1:4000/;
+	proxy_set_header Host $host;
+    	proxy_set_header X-Real-IP $remote_addr;
+       }
+}
+sudo rm /etc/nginx/sites-enabled/default
+sudo ln -sf /etc/nginx/sites-available/bet.com /etc/nginx/sites-enabled/bet.com
+systemctl restart nginx
+and then
+sudo nano /etc/hosts
+add domains like so 127.0.0.1  localhost server1.com server2.com
+open browser type server1.com and server2.com
+
+
+
+
+
+
+
+
+
+

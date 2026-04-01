@@ -1,0 +1,164 @@
+composer create-project laravel/laravel projectname
+composer require laravel/breeze --dev
+php artisan breeze:install
+npm i vue@next vue-loader@next
+npm i @vitejs/plugin-vue
+npm i vue-router@next
+npm i -S vuex@next
+change env db name
+php artisan migrate
+
+create layouts/app.vue in resource/js folder
+update app.js file -> like so
+
+import './bootstrap';
+import { createApp } from 'vue'
+import app from './views/App.vue'
+import router from './router'
+import store from './store'
+createApp(app).use(router).use(store).mount('#app')
+
+
+and update vite.config.js -> like so
+
+import { defineConfig } from 'vite';
+import laravel from 'laravel-vite-plugin';
+import vue from '@vitejs/plugin-vue'
+export default defineConfig({
+    plugins: [
+        vue(),
+        laravel([
+            'resources/css/bootstrap.min.css',
+            'resources/css/app.css',
+            'resources/js/app.js',
+            'resources/js/bootstrap.js'
+        ]),
+    ],
+});
+
+then in welcome.blade.php call js
+<div id="app"></div>
+@vite('resources/js/app.js')
+@vite('resources/js/bootstrap.js')
+@vite('resources/css/app.css')
+@vite('resources/css/bootstrap.min.css')
+
+-------------------------------------------------------
+import { createStore } from 'vuex'
+
+export default createStore({
+  state: {
+    test: "Test"
+  },
+  mutations: {
+
+  },
+  actions: {
+
+  },
+  getters: {
+
+  },
+  modules: {
+    
+  }
+})
+
+-------------------------------------------------------
+import { createWebHistory, createRouter } from "vue-router";
+
+import Home from "../views/Home.vue";
+import Products from "../views/Products.vue";
+import ProductDetails from "../views/products/_id.vue";
+import NotFound from "../views/NotFound.vue";
+
+const routes = [
+  {
+    path: "/",
+    name: "Home",
+    component: Home,
+  },
+  {
+    path: "/products",
+    name: "Products",
+    component: Products,
+  },
+  {
+    path: "/products/:id",
+    name: "ProductDetails",
+    component: ProductDetails
+  },
+  {
+    path: "/:catchAll(.*)",
+    component: NotFound,
+  }
+];
+
+const router = createRouter({
+  history: createWebHistory(),
+  routes,
+});
+
+export default router;
+
+----------------------------------
+and go web.php add this code
+Route::get('/{any}', function () {
+    return view('master');
+})->where('any', '.*');
+
+npm run dev
+open new terminal then php artisan serve
+----------------------------------------------------------
+resource type
+1 - php artisan make:model Company -m
+2 - php artisan make:controller CompanyController --resource --model=Company
+or for api 
+php artisan make:controller CompanyController --api --resource --model=Company
+3 - php artisan make:resource CompanyResource
+4 - php artisan make:request CompanyRequest
+
+
+---------------------------------------------------------------
+
+for sql error during php artisan migrate update this file ->  app/providers/AppServiceProvider.php 
+<?php
+
+namespace App\Providers;
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\ServiceProvider;
+
+class AppServiceProvider extends ServiceProvider
+{
+    public function register()
+    {
+    }
+
+    public function boot()
+    {
+        Schema::defaultStringLength(191); 
+    }
+}
+
+php artisan migrate
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

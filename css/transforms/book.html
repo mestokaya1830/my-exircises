@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      perspective: 1000px;
+    }
+    .books{
+      position: relative;
+      top: 0;
+      width: 400px;
+      height: 600px;
+      line-height: 600px;
+      text-align: center;
+      font-size: 40px;
+      color: #fff;
+      margin: 0 30px;
+      background-color: cadetblue;
+      border-radius: 5px;
+      box-shadow: -35px 35px 50px rgba(0, 0, 0, 0.5);
+    }
+    .book1{
+      transform: rotateX(50deg);
+    }
+    .book2{
+      transform: rotateX(50deg) rotateY(30deg);
+    }
+    .book3{
+      transform: rotateY(50deg);
+    }
+  </style>
+</head>
+<body>
+  <div class="books book1">Book-1</div>
+  <div class="books book2">Book-2</div>
+  <div class="books book3">Book-3</div>
+</body>
+</html>

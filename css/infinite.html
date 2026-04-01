@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .img1{
+      position: absolute;
+      z-index: 10;
+      bottom: -250px;
+      animation: bottom 5s linear infinite;
+    }
+    .img2{
+      position: absolute;
+      z-index: 10;
+      left: -250px;
+      top: 40%;
+      transform: rotate(90deg);
+      animation: left 5s linear infinite;
+    }
+    @keyframes bottom {
+      0%{
+        bottom: 0;
+        opacity: 0;
+      }
+      100%{
+        bottom: 105%;
+        opacity: 1;
+      }
+    }
+    @keyframes left {
+      0%{
+        left: 0;
+        opacity: 0;
+      }
+      100%{
+        left: 105%;
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <img src="./img/rocket.png" class="img1" alt="">
+  <img src="./img/rocket.png" class="img2" alt="">
+</body>
+</html>

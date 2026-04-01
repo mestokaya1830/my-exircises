@@ -1,0 +1,40 @@
+📦 Packaging Your App with pkg
+1️⃣ Installation
+Install the packager globally on your system.
+
+📥 npm i -g pkg
+
+2️⃣ Basic Usage
+Convert your main JavaScript file into an executable for your current operating system.
+
+⚙️ pkg app.js
+
+⚠️ Important Note: Your node_modules folder must be in the root directory for the packager to bundle dependencies correctly.
+
+3️⃣ Cross-Platform Compilation (The "All-in-One" Way)
+You can build for Windows, Linux, and macOS simultaneously from a single machine.
+
+🌍 Build for all platforms:
+
+pkg app.js (Creates binaries for all supported systems)
+
+🐧 Target: Linux
+
+pkg app.js --target node18-linux-x64
+
+🍎 Target: macOS
+
+pkg app.js --target node18-macos-x64
+
+🪟 Target: Windows
+
+pkg app.js --target node18-win-x64
+
+💡 Pro Tip for your Fullstack Apps
+Since you are using TypeScript, remember to run your build script first!
+
+Run npm run build in your server folder.
+
+Navigate to your dist folder.
+
+Run pkg index.js inside that folder to package the compiled JavaScript.

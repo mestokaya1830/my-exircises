@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+      }
+      .container{
+        display: flex;
+        gap: 50px;
+      }
+      .container div {
+        margin-top: 100px;
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        border: 1px solid #ccc;
+      }
+      .container {
+        & div:nth-child(1){
+          background: conic-gradient(
+           red 0deg, red 90deg,
+           blue 90deg, blue 180deg,
+           yellow 180deg, yellow 270deg,
+           green 270deg
+          );
+        }
+        & div:nth-child(2){
+          background: conic-gradient(
+            red 0deg, red 90deg,
+            blue 90deg, blue 180deg,
+            green 180deg
+          );
+        }
+        & div:nth-child(3){
+          background: conic-gradient(
+            red 0deg, red 180deg,
+            blue 180deg
+          );
+        }
+        & div:nth-child(4){
+          background: conic-gradient(
+           blue 0deg, blue 90deg,
+           red 90deg, red 180deg,
+           red 180deg, red 270deg,
+           blue 270deg, blue 360deg
+          );
+        }
+        & div:nth-child(5){
+          background: conic-gradient(
+          red 0deg, red 60deg, blue 60deg
+          );
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </body>
+</html>

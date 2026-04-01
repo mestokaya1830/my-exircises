@@ -1,0 +1,79 @@
+👉️INSTALL
+npm i vue
+npm i vuex
+npm i vue-router
+npm i vue-loader
+npm i @vitejs/plugin-vue
+
+
+👉️vite.congif.js
+import { defineConfig } from 'vite';
+import laravel from 'laravel-vite-plugin';
+import vue from '@vitejs/plugin-vue'
+
+export default defineConfig({
+    plugins: [
+        vue(),
+        laravel({
+            input: ['resources/css/app.css', 'resources/js/app.js'],
+            refresh: true,
+        }),
+    ],
+});
+
+👉️ resources/app.js
+import { createApp } from 'vue'
+import app from './views/app.vue'
+
+createApp(app)
+.mount('#app')
+
+👉️ welcome.blade.php
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Laravel</title>
+    @vite('resources/css/app.css')
+</head>
+
+<body class="antialiased">
+    <div id="app"></div>
+    @vite('resources/js/app.js')
+</body>
+
+</html>
+
+
+
+👉️ THEN
+touch /resources/js/views/app.vue
+<template>
+<div>
+<h1>Home</h1>
+</div>
+</template>
+npm run dev
+
+
+
+
+👉️FOR VUE NOTFOUND
+in laravel routes/web
+Route::get('{any}', function () {
+    return view('welcome');
+})->where('any','.*');
+
+
+
+
+
+
+
+
+
+
+
+
+

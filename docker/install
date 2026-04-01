@@ -1,0 +1,4 @@
+👉️DOCKER START
+sudo systemctl start docker
+systemctl --user start docker-desktop
+

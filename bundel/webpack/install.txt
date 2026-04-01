@@ -1,0 +1,23 @@
+npm init -y
+npm i webpack webpack-cli --dev
+npm i webpack-dev-server --dev //optional for automatic refresh bundle and index.html
+npm i html-webpack-plugin --dev //optional to create index.html in dist automatic
+
+
+touch webpack.config.js
+create index.html and css in folder in dist
+
+in package.json
+"dev": "webpack-dev-server --mode development --open"
+"build": "webpack --mode production" //decrase bundle size totaly
+
+
+
+//for babel-webpack version
+npm i --save-dev babel-loader @babel/core
+npm i @babel/preset-env --save-dev
+touch babel.config.json //in root folder
+and this in config file
+{
+  "presets": ["@babel/preset-env"]
+}

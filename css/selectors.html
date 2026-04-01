@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* p em{color: red;} */
+
+    /* p > em{color: red;} */
+
+    /* p ~ p{
+      background-color: blue;
+    } */
+
+    /* p + p{
+      background-color: yellow;
+    } */
+
+    /* p[title]{
+      color: blueviolet;
+    } */
+    /* or */
+    /* .para[title]{
+      color: blueviolet;
+    } */
+
+     /* p[title="Element"]{
+      background-color: red;
+     } */
+
+     /* p[title~="Element"]{
+      background-color: red;
+     } */
+
+     /* p[title|="Element"]{
+      background-color: red;
+     } */
+
+     /* p[title^="Element"]{
+      background-color: red;
+     } */
+
+     /* p[title$="Element"]{
+      background-color: red;
+     } */
+
+     /* p[title*="Element"]{
+      background-color: red;
+     } */
+
+     /* p[title*="Element" i]{
+      background-color: red;
+     } */
+
+     div{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 200px;
+      height: 30px;
+      background-color: red;
+      color: #fff;
+      font-size: 20px;
+      font-weight: bold;
+      border-radius: 5px;
+      position: relative;
+     }
+     div::before{
+      content: "";
+      /* content: attr(data-id);
+      content: attr(data-name); */
+      position: absolute;
+      z-index: 1;
+      background-color: blueviolet;
+      height: 100%;
+      width: 0;
+      border-radius: 5px;
+      transition: width 0.5s linear;
+     }
+     div:hover::before{
+      width: 100%;
+     }
+
+
+     /* input[type="checkbox"]:checked + span{
+      color: red;
+     } */
+
+
+     /* input[type="radio"]:checked + span{
+      color: red;
+     } */
+
+
+
+
+  </style>
+</head>
+<body>
+  <p>Hallo <em>Enkel</em></p>
+  <p>Hallo <span><em>Child</em></span></p>
+  <h2>Sibling</h2>
+  <p>Not Sibling</p>
+  <p title="Element" class="para">1</p>
+  <p title="P Element" class="para">2</p>
+  <p title="Element Another" class="para">3</p>
+  <p title="ElementAnother" class="para">4</p>
+  <p title="element" class="para">5</p>
+
+  <div data-id="1" data-name="Div Element">Before</div>
+
+<hr>
+  <section>
+    <input type="checkbox" name="" id="" value="Html"><span>Html</span>
+    <input type="checkbox" name="" id="" value="Css"><span>Css</span>
+    <input type="checkbox" name="" id="" value="Javascript"><span>Javascript</span>
+  </section>
+
+  <section>
+    <input type="radio" name="gender" id=""><span>Male</span>
+    <input type="radio" name="gender" id=""><span>Female</span>
+  </section>
+</body>
+</html>

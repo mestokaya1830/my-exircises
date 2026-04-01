@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Async vs Defer Örneği</title>
+</head>
+<body>
+  <h1>Async ve Defer Testi</h1>
+  <p>Sayfa yükleniyor...</p>
+
+  <!-- Async Script: DOM bağımsız, sayfa yüklemesini engellemez -->
+  <script src="async-script.js" async></script>
+
+  <!-- Defer Script: DOM hazır olunca çalışır, sıralı -->
+  <script src="defer-script1.js" defer></script>
+  <script src="defer-script2.js" defer></script>
+
+  <!-- Normal Script: DOM beklenmeden çalışır, sayfa yüklemesini bloklar -->
+  <script src="normal-script.js"></script>
+</body>
+</html>

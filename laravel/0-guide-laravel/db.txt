@@ -1,0 +1,16 @@
+👉️ For existing database
+composer require --dev kitloong/laravel-migrations-generator
+php artisan migrate:generate  //for all tables
+php artisan migrate:generate --tables="table1,table2,table3,table4,table5" //specific tables
+or ignored tables  php artisan migrate:generate --ignore="table3,table4,table5"
+
+👉️ Create Only Table
+php artisan make:migration create_todos_table
+after edit run php artisan migrate
+
+👉️ Models
+php artisan model:show User
+php artisan make:model "name" -c  //for controller
+php artisan make:model "name" -mc  //for migration and controller
+php artisan make:model "name" -mcrR  //for migration, controller, resource and requests
+php artisan make:model "name" -a //for all

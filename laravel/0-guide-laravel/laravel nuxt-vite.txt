@@ -1,0 +1,27 @@
+composer create-project laravel/laravel server
+npx create-nuxt-app client
+change env db name
+php artisan migrate
+
+folder structer
+create layouts/deafult.vue in client folder
+components
+pages
+ Home
+ Products
+ products folder with lowercase for details
+   _id.vue
+
+vuex------------------------------------------------
+export const state = () => ({
+  users:{}
+})
+export const mutations =  {
+  setUsers:(state,payload)=>{
+    state.users = payload
+  }
+
+}
+export const actions = {
+  
+}

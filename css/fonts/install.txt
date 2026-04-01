@@ -1,0 +1,17 @@
+👉️FONT INSTALL
+download font file
+convert it to wolf2 or wolf
+in css file add this section
+
+@font-face {
+  font-family: roboto;
+  src: url('./Roboto/Roboto-BlackItalic.ttf');
+}
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  font-family: roboto;
+}

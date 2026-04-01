@@ -1,0 +1,30 @@
+👉️DOCKER DESKTOP START
+systemctl --user start docker-desktop
+
+---------------IMAGES-------------------------------
+👉️CREATE IMAGE
+create dockerfile in project folder
+docker build  -t imagename ./
+
+👉️REMOVE IMAGE
+stop container
+remove container
+docker images
+get id
+docker rmi id or name
+
+----------CONTAINERS-------------------------------
+
+👉️CREATE CONTAINER
+docker run --publish 3000:3000 imagename
+
+👉️STOP CONTAINER
+docker ps //this is running container
+get docker id
+docker stop id
+
+👉️REMOVE CONTAINER
+docker ps -a //all container running or not
+get docker id
+docker rm id
+

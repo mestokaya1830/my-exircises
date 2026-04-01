@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .canvas-con {
+        width: 700px;
+        height: 400px;
+        margin-top: 50px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        padding: 0 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="canvas-con">
+      <canvas id="myChart"></canvas>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+      Chart.defaults.elements.bar.borderWidth = 10;
+      const plugin = {
+        id: "custom_canvas_background_color",
+        beforeDraw: (chart) => {
+          const ctx = chart.canvas.getContext("2d");
+          ctx.save();
+          ctx.globalCompositeOperation = "destination-over";
+          ctx.fillStyle = "lightGreen";
+          ctx.fillRect(0, 0, chart.width, chart.height);
+          ctx.restore();
+        },
+      };
+
+      const label = [
+        "Javascript",
+        "C#",
+        "Php",
+        "Python",
+        "Go",
+        "Ruby",
+        "Java",
+        "C++",
+      ];
+      const color = [
+        "#f0db4f",
+        "#903ba7",
+        "#8993be",
+        "#4584b6",
+        "#00aed9",
+        "darkred",
+        "#f58312",
+        "#00589d",
+      ];
+      const data = [8, 6, 3, 7, 2, 5, 8, 3];
+
+      let myChart = new Chart(document.getElementById("myChart"), {
+        type: "bar",
+        data: {
+          labels: label,
+          datasets: [
+            {
+              label: "Bar Chart",
+              data: data,
+              backgroundColor: color,
+              barPercentage: 0.5,
+              categoryPercentage: 1,
+              borderRadius: 5,
+            },
+          ],
+        },
+        scales: {
+          yAxis: {
+            min: 0,
+            stepSize: 1,
+          },
+        },
+        options: {
+          plugins: {
+            title: {
+              display: true,
+              text: "Title",
+              font: { size: 30 },
+              padding: {
+                top: 0,
+                bottom: 0,
+              },
+            },
+            subtitle: {
+              display: true,
+              text: "Subtitle",
+            },
+            legend: {
+              display: true,
+              position: "top",
+              labels: {
+                color: "blue",
+                font: { size: 10 },
+              },
+            },
+          },
+        },
+        plugins: [plugin], // <-- Custom plugin
+      });
+      console.log(myChart.data);
+    </script>
+  </body>
+</html>

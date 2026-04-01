@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Flat Cheeckbox</title>
+	<link rel="stylesheet" href="">
+<style type="text/css" media="screen">
+body{
+	display: flex;
+	padding: 30px;
+}
+.labels{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 180px;
+  height: 40px;
+  margin-right: 10px;
+  padding-left: 30px;
+  box-sizing: border-box;
+  background-color:#ccc;
+  color:rgb(255,255,255);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 3px;
+  text-shadow:0px 1px 0px rgba(0,0,0,0.5);
+  box-shadow:0px 2px 2px rgba(0,0,0,0.2);
+  cursor:pointer;
+  position: relative;
+}
+.labels:before{
+	content: "✓";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 40px;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+	background-color: #03A54B;
+}
+.labels:hover{
+	background-color: #03A54B;
+}
+.flatcheckbox{
+	display: none;
+}
+.flatcheckbox:checked ~ .labels{
+	background-color: #03A54B;
+}
+.flatcheckbox:checked ~ .labels:before{
+	background-color: #03A54B;
+}
+</style>
+</head>
+<body>
+	<div>
+		<input type="checkbox" name="html5" id="checkbox1" class="flatcheckbox">
+		<label for="checkbox1" class="labels" id="flat_chackbox_label">Html5</label>
+	</div>
+	<div>
+		<input type="checkbox" name="css3" id="checkbox2" class="flatcheckbox">
+		<label for="checkbox2" class="labels" id="flat_chackbox_label">Css3</label>
+	</div>
+	<div>
+		<input type="checkbox" name="jquery" id="checkbox3" class="flatcheckbox">
+		<label for="checkbox3" class="labels" id="flat_chackbox_label">Jquery</label>
+	</div>
+</body>
+</html>

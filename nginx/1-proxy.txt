@@ -1,0 +1,35 @@
+sudo apt update
+sudo apt install nginx
+
+cd projectname run nodejs project running on 3000 port
+
+sudo nano /etc/nginx/sites-available/chat-app 
+
+
+server {
+       listen 80;
+       listen [::]:80;
+       server_name 127.0.0.1;
+       root /var/www/html;
+       index index.html;
+
+       location / {
+       	proxy_pass http://127.0.0.1:3000/;
+	proxy_set_header Host $host;
+    	proxy_set_header X-Real-IP $remote_addr;
+       }
+}
+
+sudo ln -s /etc/nginx/sites-available/chat-app /etc/nginx/sites-enabled/
+sudo nginx -t   # test
+sudo systemctl restart nginx
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+      .container {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        transform-style: preserve-3d;
+        animation: ani 20s linear infinite;
+      }
+      @keyframes ani {
+        0% {
+          transform: perspective(1000px) rotateX(0deg) rotateY(35deg);
+        }
+        100% {
+          transform: perspective(1000px) rotateX(360deg) rotateY(35deg);
+        }
+      }
+      span {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        transform-origin: center;
+        transform-style: preserve-3d;
+        transform: rotateX(calc(var(--i) * 45deg)) translateZ(300px);
+      }
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <span style="--i: 1"><img src="./img/1.png" alt="" /></span>
+      <span style="--i: 2"><img src="./img/2.png" alt="" /></span>
+      <span style="--i: 3"><img src="./img/3.png" alt="" /></span>
+      <span style="--i: 4"><img src="./img/4.jpg" alt="" /></span>
+      <span style="--i: 5"><img src="./img/sport1.jpg" alt="" /></span>
+      <span style="--i: 6"><img src="./img/sport2.jpg" alt="" /></span>
+      <span style="--i: 7"><img src="./img/sport3.jpg" alt="" /></span>
+      <span style="--i: 8"><img src="./img/sport4.jpg" alt="" /></span>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+  html{
+    scroll-behavior: smooth;
+  }
+  .container{
+    display: flex;
+    width: 400px;
+    height: 200px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 50px auto;
+    overflow-x: scroll;
+    inset: 10px;
+    scroll-snap-type: x mandatory;
+  }
+  .items{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 380px;
+    height: 100%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 50px;
+    scroll-snap-align: center;
+  }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="items">1</div>
+    <div class="items">2</div>
+    <div class="items">3</div>
+    <div class="items">4</div>
+  </div>
+</body>
+</html>

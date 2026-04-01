@@ -1,0 +1,13 @@
+return all works (work olny deleted files and changes)------------------------------------------
+git checkout -- .
+
+
+
+return to specific file (work olny deleted files and changes)------------------------------------------
+git checkout -- filename
+
+
+
+return to specific commit (work olny deleted files and changes)------------------------------------------
+git log
+git checkout commit id -- .

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <img class="img" alt="" width="200" />
+    <button id='btn'>Download</button>
+    <script>
+      let objectURL = null;
+      async function setImage() {
+        try {
+          //get image on harddisk
+          const result = await fetch("./1.jpg");
+          console.log(result);
+          if (!result.ok) {
+            throw new Error(`result status: ${result.status}`);
+          }
+          //blob
+          const blob = await result.blob();
+          objectURL = URL.createObjectURL(blob);
+          document.querySelector(".img").src = objectURL;
+        } catch (e) {
+          console.error(e);
+        }
+      }
+      setImage();
+
+      document.getElementById("btn").onclick = () => {
+        let link = document.createElement('a')
+        link.download = 'img.png'
+        link.href = objectURL
+        link.click();
+        URL.revokeObjectURL(link.href);
+      };
+    </script>
+  </body>
+</html>

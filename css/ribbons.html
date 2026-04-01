@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    h1{margin: 30px 0;}
+    .container{
+      display: flex;
+      justify-content: center;
+      width: 520px;
+      height: 600px;
+      margin-top: 50px;
+      position: relative;
+    }
+    .text{
+      width: 92%;
+      background: #000;
+      color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      padding-top: 140px;
+      font-size: 18px;
+      text-align: center;
+    }
+    .ribbons, .ribbons2{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      background-color: darkcyan;
+      height: 80px;
+      top: 40px;
+      left: 0;
+      width: 100%;
+    }
+    .ribbons::before, .ribbons2::before{
+      content: '';
+      position: absolute;
+      background-color: darkcyan;
+      width: 40px;
+      height: 100%;
+      left: -48px;
+      transform: skewY(322deg) rotateY(320deg) translateX(58px);
+      z-index: -1;
+      top: 22px;
+      box-shadow: inset 10px 10px 30px #333;
+    }
+    .ribbons::after, .ribbons2::after{
+      content: '';
+      position: absolute;
+      background-color: darkcyan;
+      width: 40px;
+      height: 100%;
+      right: 0px;
+      transform: skewY(322deg);
+      z-index: -1;
+      top: 16px;
+      box-shadow: inset 10px 10px 30px #333;
+    }
+    .ribbons h1, .ribbons2 h1{
+      color: #fff;
+      letter-spacing: 2px;
+    }
+    /* .ribbons2 */
+    .ribbons2{
+      top: 220px;
+    }
+    .ribbons2::after{
+      transform: skewY(-322deg);
+      top: -15px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Css ribbons</h1>
+  <div class="container">
+    <div class="text">
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem IpsumLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+    </div>
+    <div class="ribbons">
+      <h1>CSS RIBBONS</h1>
+    </div>
+    <div class="ribbons2">
+      <h1>CSS RIBBONS</h1>
+    </div>
+  </div>
+</body>
+</html>

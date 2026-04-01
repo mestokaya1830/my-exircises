@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      display: flex;
+      flex-direction: column;
+      padding: 50px;
+    }
+    img{
+      width: 400px;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+  <input type="file" name="" id="fileInput" accept="image/*">
+  <img src="" alt="" id="img">
+
+  <script>
+    const img = document.querySelector('#img')
+    const fileInput = document.querySelector('#fileInput')
+    fileInput.addEventListener('change', () => {
+      if(fileInput.files[0]){
+        const url = URL.createObjectURL(fileInput.files[0])
+        img.src = url
+        console.log(url)
+      }
+    })
+  </script>
+</body>
+</html>

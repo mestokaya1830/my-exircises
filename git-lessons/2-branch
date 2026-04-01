@@ -1,0 +1,7 @@
+git fetch   //load all branches
+git branch --all //show all branches
+git branch //get current active branch
+git checkout branch-name //switch to branch
+
+
+git branch branch-name //create new branch

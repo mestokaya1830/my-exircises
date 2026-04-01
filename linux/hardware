@@ -1,0 +1,20 @@
+diks info--------------------------------------------
+fdisk -l
+fdisk -l | grep 'Disk /dev'
+or df -h
+or lsblk
+
+sudo fdisk /dev/sda //for partition
+
+cpu info---------------------------------------------
+nproc = cpu count
+lscpu = cpu cpunt with details
+top = displays the processes used by different users 
+sudo cat /proc/cpuinfo = cpu deatails in file
+
+
+
+ram info-----------------------------------------
+free = display as byte
+free -m = display as mb
+vmstat -s = display as details

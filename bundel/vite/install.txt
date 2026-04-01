@@ -1,0 +1,4 @@
+👉️INSTALL
+npm init -y
+npm i vite
+npm run dev or npm run build

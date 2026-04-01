@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"},{"v":{"$numberInt":"2"},"key":{"user":{"$numberInt":"-1"}},"name":"user_-1"},{"v":{"$numberInt":"2"},"key":{"admin":{"$numberInt":"-1"}},"name":"admin_-1"}],"uuid":"740423c04b054c6a9a0054db24b2666e","collectionName":"betsummaries","type":"collection"}

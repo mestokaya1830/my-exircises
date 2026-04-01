@@ -1,0 +1,28 @@
+<?php
+
+namespace App\Http\Controllers;
+use Illuminate\Http\Request;
+use App\Models\FileUpload;
+
+class ProgressBarController extends Controller
+{
+
+    public function index()
+    {
+        return view('fileupload');
+    }
+ 
+    public function uploadToServer(Request $request)
+    {
+        $request->validate([
+            'file' => 'required',
+        ]);
+ 
+       $name = time().'.'.request()->file->getClientOriginalExtension();
+  
+       $request->file->move(public_path('uploads'), $name);
+  
+        return response()->json(['success'=>'Successfully uploaded.']);
+    }
+
+}

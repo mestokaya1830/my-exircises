@@ -1,0 +1,49 @@
+Fortify
+Laravel Fortify, Auth konusunda aradığınız şey. İçerisinde kullanıcı kaydı, login, şifre sıfırlama, email onayı ve 2FA barındırıyor. Fortify ile baştan sona bir authentication sistemine sahip oluyorsunuz fakat Fortfiy sadece backend bir sistem. Yani bir arayüze sahip değil. Kayıt formu, login forumu, şifre sıfırlama vs tüm formları kendiniz tasarlamalısınız. Bunları kendiniz hazırlamak istemiyorsanız ihtiyacınız olan Laravel Breeze.
+
+Breeze
+Laravel Breeze, Auth kullanan bir UI kit. Yani üstte bahsettiğim özellikler için Tailwind CSS ve Blade şablonları ile login formu, kayıt formu, şifre sıfırlama formu… vs hepsi içerisinde. Bunu kullanıp hızlı bir giriş yapabilirsiniz ya da içindeki Blade şablonlarını alıp kendi arayüzünüze entegre edebilir ya da nasıl entegre edebileceğinizi öğrenebilirsiniz. Örneğin login formuna bakalım:
+https://github.com/laravel/breeze/blob/master/stubs/resources/views/auth/login.blade.php
+
+Bu size yeni başladığınız için karışık gelebilir ama aslında yapılan sadece şu:
+
+<form method="POST" action="{{ route('login') }}">
+    @csrf
+    <input type="email" name="email" required>
+    <input type="password" name="password" required>
+    <label><input type="checkbox" name="remember">Beni Hatırla</label>
+    <button type="submit">Giriş</button>
+</form>
+
+<a href="{{ route('password.request') }}">Şifremi Unuttum</a>
+Burada @csrf ne ifade ediyor, {{ route(‘login’) }} ne ifade ediyor dokümanları inceledikçe öğreneceksiniz.
+
+Breeze kullanmak zorunda değilsiniz, Tailwind CSS de kullanmak zorunda değilsiniz. İçerisindeki formları alıp örneğin Bootstrap HTML’ine göre hazırlayabilir ve Blade şablonları oluşturabilirsiniz. Sonra da Breeze ile devam edebilir ya da Fortify kullanırsınız.
+
+Jetstream
+Laravel Jetstream ise Fortify ve Breeze aksine komple bir uygulama başlangıç kiti. Fortify ve Breeze ile kendi uygulamanıza entegre olabiliyorken Jetstream ile uygulama geliştirirken ne kullanacağınızı belirlemiş oluyorsunuz. Yani kısaca Jetstream kullanıp kendi uygulamanıza entegre olamayabilirsiniz çünkü Jetsream size Liveware + Blade ya da Inertia.js + Vue şeklinde iki farklı teknoloji stack sunuyor. Bunlardan birini seçiyorsunuz ve bu seçim şu demek oluyor: Ben artık uygulamamı bunlarla geliştireceğim. Yani Jetstream kurup ben Bootstrap ile admin paneli yapabilir miyim sorusuna hayır cevabı alacaksınız. Diyelim ki Liveware + Blade seçtiniz. Bundan sonra uygulamayı komple bu ikisi ile geliştıreceksiniz. Yani Liveware öğrenmeniz gerekiyor. Inertia.js + Vue seçtiyseniz her ikisine de hakim olmanız gerekiyor. Jetstream yeni başlayanlar ve sunduğu teknoloji stacklarına hakim olmayanlar için kesinlikle uygun değildir. Aradığınız Fortify ya da Breeze.
+
+Auth
+Bunun dışında Laravel size temel authentication sunmakta. https://laravel.com/docs/8.x/authentication . Bununla komple kendi authentication alt yapınızı da kurabilirsiniz fakat çok özel bir isteğiniz yoksa Foritfy varken gereksiz olacaktır. Auth çekirdek bir bileşen olduğu için kullanıma hazır gelir. Basit bir login örneği vermek gerekirse:
+
+$credentials = $request->only('email', 'password');
+
+if (Auth::attempt($credentials)) {
+    $request->session()->regenerate();
+    // Giriş başarılı, burada yönlendirme vs yapabilirsiniz
+}
+Dediğim gibi dokümanları yani https://laravel.com/docs/8.x sayfa sayfa değil satır satır okum
+
+
+
+-----------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+

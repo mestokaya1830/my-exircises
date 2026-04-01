@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style>
+		.con{
+			display: flex;
+		}
+	.card-1, .card-2{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 230px;
+		height: 300px;
+		background-color: #1788D0;
+		border-radius: 4px;
+		margin: 50px;
+		padding: 5px;
+		position: relative;
+	}
+	.card-2{
+		transform-origin: 0%;
+	}
+	#front{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 90%;
+		height: 92%;
+		border-radius: 4px;
+		position: absolute;
+		transform: perspective(600px) rotateY(0);
+		backface-visibility: hidden;
+		background-color: #fff;
+		transition: transform 0.5s linear 0s;
+	}
+	#back{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 90%;
+		height: 92%;
+		border-radius: 4px;
+		position: absolute;
+		transform: perspective(600px) rotateY(180deg);
+		backface-visibility: hidden;
+		background-color: #eee;
+		transition: transform 0.5s linear 0s;
+	}
+	.card-1:hover > #front{
+		transform: perspective(600px)rotateY(-180deg);
+	}
+	.card-1:hover > #back{
+		transform: perspective(600px)rotateY(0);
+	}
+
+	/* card-2 */
+	.card-2 #front{
+		transform-origin: 0%;
+		transform: perspective(600px) rotateY(0);
+		
+	}
+	.card-2:hover > #front{
+		transform: perspective(600px)rotateY(90deg);
+	}
+	</style>
+</head>
+<body>
+	<div class="con">
+		<div class="card-1">
+			<div id="front"><h1>Front</h1></div>
+			<div id="back"><h1>Back</h1></div>
+		</div>
+		<div class="card-2">
+			<div id="front"><h1>Front</h1></div>
+			<div id="back"><h1>Back</h1></div>
+		</div>
+	</div>
+</body>
+</html>

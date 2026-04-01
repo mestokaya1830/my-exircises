@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>@layer + @scope Örneği</title>
+<style>
+/* Katmanları tanımlıyoruz */
+@layer electronics {
+  @scope (.electronics) {
+    .card {
+      background: lightblue;
+      color: white;
+      padding: 15px;
+      margin: 10px;
+      border-radius: 8px;
+      text-align: center;
+    }
+  }
+}
+
+@layer clothing {
+  @scope (.clothing) {
+    .card {
+      background: lightpink;
+      color: white;
+      padding: 15px;
+      margin: 10px;
+      border-radius: 8px;
+      text-align: center;
+    }
+  }
+}
+
+/* Katman sırası */
+@layer electronics, clothing;
+</style>
+</head>
+<body>
+
+<h2>Ürün Kataloğu</h2>
+
+<div class="electronics">
+  <div class="card">Telefon</div>
+  <div class="card">Tablet</div>
+</div>
+
+<div class="clothing">
+  <div class="card">Tişört</div>
+  <div class="card">Elbise</div>
+</div>
+
+</body>
+</html>

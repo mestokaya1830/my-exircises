@@ -1,0 +1,27 @@
+sudo apt-get remove nginx nginx-common
+sudo apt-get purge nginx nginx-common
+sudo apt-get autoremove
+
+sudo apt update
+sudo apt install nginx
+
+sudo service nginx stop
+sudo service nginx start
+sudo service nginx restart
+
+nginx located default config---------------------------------------------------------------
+sudo nano /etc/nginx/nginx.conf
+
+Start by displaying the available Nginx profiles-----------------------------
+sudo ufw app list
+
+To grant Nginx access through the default Ubuntu firewall, enter the following:
+sudo ufw allow 'nginx http'
+sudo ufw reload
+
+
+For encrypted (https) traffic, enter--------------------------------------------
+sudo ufw allow 'nginx https'
+
+
+

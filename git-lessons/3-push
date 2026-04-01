@@ -1,0 +1,11 @@
+git log  or git log --oneline
+git status
+
+first time 
+git remote add origin https://github.com/mestokaya1830/apps.git
+git branch -M main
+then
+git add filename ----------------------------//track files
+git add . //all files -----------------------//track files
+git commit -m "commit-1" --------------------//add stage
+git push -u origin branch-name

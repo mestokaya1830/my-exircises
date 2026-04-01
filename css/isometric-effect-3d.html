@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #000;
+      height: 100vh;
+    }
+
+    ul{
+      display: flex;
+      position: relative;
+      transform: rotate(-25deg) skew(25deg);
+    }
+    ul li{
+      position: relative;
+      list-style: none;
+      width: 100px;
+      height: 100px;
+      margin: 0 10px;
+    }
+    ul li span{
+      display: flex !important;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #333;
+    }
+    ul li img{
+      width: 90px;
+      height: 90px;
+    }
+    ul li:hover span{
+      z-index: 1000;
+      transition: 0.2s;
+      box-shadow: -1px 1px 1px rgba(0,0,0,0.5);
+    }
+
+    ul li:nth-child(1):hover span{
+      background-color: #03A9F4;
+    }
+    ul li:nth-child(2):hover span{
+      background-color: #e21a20;
+    }
+    ul li:nth-child(3):hover span{
+      background-color: #1976d2;
+    }
+
+    ul li:hover span:nth-child(5){
+      transform: translate(40px, -40px);
+      opacity: 1;
+    }
+    ul li:hover span:nth-child(4){
+      transform: translate(30px, -30px);
+      opacity: 0.8;
+    }
+    ul li:hover span:nth-child(3){
+      transform: translate(20px, -20px);
+      opacity: 0.6;
+    }
+    ul li:hover span:nth-child(2){
+      transform: translate(10px, -10px);
+      opacity: 0.4;
+    }
+    ul li:hover span:nth-child(1){
+      transform: translate(0, 0);
+      opacity: 0.2;
+    }
+
+    /* for 3d */
+    ul li:before{
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 10px;
+      left: 0;
+      bottom: -10px;
+      background-color: #333;
+      transform-origin: top;
+      transform: skewX(-40deg);
+    }
+    ul li:after{
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -9px;
+      width: 9px;
+      height: 100%;
+      transform-origin: right;
+      transform: skewY(-49deg);
+    }
+  </style>
+</head>
+<body>
+  <ul>
+    <li>
+      <a href="#">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span><img src="./img/twitter.png" alt=""></span>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span><img src="./img/youtube.png" alt=""></span>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span><img src="./img/facebook.png" alt=""></span>
+      </a>
+    </li>
+  </ul>
+</body>
+</html>

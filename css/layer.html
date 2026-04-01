@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>Category Layers Örneği</title>
+<style>
+/* Katmanlar */
+@layer electronics {
+  .product.electronics {
+    background: lightblue;
+    border: 2px solid blue;
+    padding: 10px;
+    margin: 5px;
+  }
+}
+
+@layer clothing {
+  .product.clothing {
+    background: lightpink;
+    border: 2px solid crimson;
+    padding: 10px;
+    margin: 5px;
+  }
+}
+
+/* Katman sırası */
+@layer electronics, clothing;
+
+/* Ortak stiller */
+.product {
+  width: 150px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  border-radius: 5px;
+}
+</style>
+</head>
+<body>
+
+<h2>Ürün Kategorileri</h2>
+
+<div class="product electronics">
+  <h3>Telefon</h3>
+  <p>Elektronik Ürün</p>
+</div>
+
+<div class="product clothing">
+  <h3>Tişört</h3>
+  <p>Giyim Ürünü</p>
+</div>
+
+<div class="product electronics">
+  <h3>Tablet</h3>
+  <p>Elektronik Ürün</p>
+</div>
+
+<div class="product clothing">
+  <h3>Elbise</h3>
+  <p>Giyim Ürünü</p>
+</div>
+
+</body>
+</html>

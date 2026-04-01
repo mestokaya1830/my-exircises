@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .container{
+      display: flex;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 740px;
+      height: 460px;
+    }
+    .items{
+      width: 25%;
+      height: 100%;
+      background-color: #ddd;
+      transition: .5s;
+      background-image: url('./img//sport4.jpg');
+      background-size: cover;
+    }
+    .container:hover .items:nth-child(odd){
+      transform: skewY(15deg);
+      box-shadow: inset 20px 0 50px rgba(0,0,0,0.5);
+    }
+    .container:hover .items:nth-child(even){
+      transform: skewY(-15deg);
+      box-shadow: inset 20px 0 50px rgba(0,0,0,0.5);
+    }
+    .items:nth-child(1){
+      background-position: 0;
+    }
+    .items:nth-child(2){
+      background-position: -185px;
+    }
+    .items:nth-child(3){
+      background-position: calc(-185px * 2);
+    }
+    .items:nth-child(4){
+      background-position: calc(-185px * 3);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="items"></div>
+    <div class="items"></div>
+    <div class="items"></div>
+    <div class="items"></div>
+  </div>
+</body>
+</html>

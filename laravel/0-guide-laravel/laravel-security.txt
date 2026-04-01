@@ -1,0 +1,9 @@
+use this {{ $users }} //escape html
+dont use {{ !! $users !! }}//not-escape html
+
+dont put .env file in ppublic folder
+
+
+make false debug mode in production in app.config.php
+
+use route rate-limit for perminute

@@ -1,0 +1,16 @@
+@import 'bootstrap';
+
+.navbar{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 60px;
+  background-color: #333;
+  & .links{
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 22px;
+  }
+}
+

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .con {
+        width: 300px;
+        height: 300px;
+        margin-top: 100px;
+        position: relative;
+        border: 1px solid #ccc;
+        transform-style: preserve-3d;
+        perspective: 1000px;
+        transform: rotateY(30deg) rotateX(-30deg);
+      }
+      .item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 200px;
+        height: 200px;
+        border: 1px solid #000;
+        position: absolute;
+        top: 50px;
+        left: 50px;
+        font-size: 50px;
+        color: #fff;
+      }
+      .back {
+        background-color: red;
+        transform: translateZ(-140px);
+      }
+      .left {
+        background-color: blue;
+        transform: translateX(-140px) rotateY(90deg);
+      }
+      .right {
+        background-color: green;
+        transform: translateX(140px) rotateY(-90deg);
+      }
+      .front {
+        background-color: blueviolet;
+        transform: translateZ(140px);
+      }
+      .top {
+        background-color: cadetblue;
+        top: 0;
+        transform: translateY(-140px) rotateX(90deg);
+      }
+      .bottom {
+        background-color: cornflowerblue;
+        transform: translateY(140px) rotateX(90deg);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="con">
+      <div class="item back">back</div>
+      <div class="item left">left</div>
+      <div class="item right">right</div>
+      <div class="item front">front</div>
+      <div class="item top">top</div>
+      <div class="item bottom">bottom</div>
+    </div>
+  </body>
+</html>

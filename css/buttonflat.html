@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Flat Button</title>
+	<link rel="stylesheet" href="">
+<style type="text/css" media="screen">
+body{
+	display: flex;
+	padding: 30px;
+}
+.buttons{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 140px;
+  height: 40px;
+  margin-right: 10px;
+  background-color:rgb(41,127,184);
+  color:rgb(255,255,255);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 3px;
+  text-shadow:0px 1px 0px rgba(0,0,0,0.5);
+  box-shadow:0px 2px 2px rgba(0,0,0,0.2);
+  position: relative;
+}
+#flat:hover {
+  background-color: #2E51E7;
+}
+#flat2{
+	width: 180px;
+	padding-left: 30px;
+  box-sizing: border-box;
+}
+#flat2:before{
+	content: "✓";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 40px;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+	background-color: #2E51E7;
+}
+#flat2:hover {
+  background-color: #2E51E7;
+}
+#flat3{
+	width:140px;
+  height: 40px;
+	font-size: 17px;
+	font-family:'Helvetica Neue';
+	color:#222;
+	background-color: #fff;
+	border: solid 1px #a5b1bd;
+	box-sizing: border-box;
+	border-radius: 3px;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+	cursor: pointer;
+}
+</style>
+</head>
+<body>
+	<a href="#" class="buttons" id="flat">Login</a>
+	<a href="#" class="buttons" id="flat2">Login</a>
+	<a href="#" class="buttons" id="flat3">Login</a>
+</body>
+</html>

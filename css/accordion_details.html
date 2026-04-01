@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Details</title>
+<style type="text/css">
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+	}
+#container{
+  width: 60%;
+  padding: 5px;
+  background-color: #888;
+  border-radius: 4px;
+	}
+details{
+  height:auto;
+  margin-bottom:1px;
+	border-bottom: 1px solid #ccc;
+  border-radius:2px;
+  background-color:#ccc;
+  overflow:hidden;
+}
+.inside{
+  padding:2%;
+  box-sizing: border-box;
+}
+details a{
+  display:block;
+  height:30px;
+	font-size: 20px;
+  text-decoration:none;
+}
+details[open] summary {
+  background: #69c773;
+  color: #333;
+}
+details[open] summary::-webkit-details-marker {
+  background: #69c773;
+  color: #fff;
+}
+details:not([open]){
+  height: 34px;
+ }
+details[open]{
+  height: 140px;
+ }
+ details {
+   transition: all 0.5s /* linear;this wotj with details:not([open]) and details[open] height */
+}
+summary{
+  height:34px;
+  line-height:34px;
+  font-size:20px;
+  border-radius:2px;
+  background-color:#fff;
+	cursor: pointer;
+}
+summary img{
+  margin-right:5px;
+  margin-left:10px;
+}
+details summary::-webkit-details-marker {
+  color: #111;
+  float:right;
+  margin-top:10px;
+}
+/*summary:after {  
+  content: "+"; 
+  color: #fff; 
+  float: right; 
+  font-size: 1.5em; 
+  font-weight: bold; 
+  margin:0; 
+  padding: 0; 
+  text-align: center; 
+  width: 20px;
+  background: #ccc;
+}
+details[open] summary:after {
+  content: "-";
+}*/
+	#click{
+		margin-top: 10px;
+		width: 200px;
+		height: 30px;
+	}
+</style>
+  <script src="../../jquery/jquery-3.1.1.min.js"></script>
+  <script>
+    $(document).ready(function(e) {
+      $("#open").click(function(){  
+        $("details").prop("open",true);
+      });
+      $("#close").click(function(){  
+        $("details").prop("open",false);
+      });
+    });
+  </script>
+</head>
+<body>
+  <h1 class="title">Details</h1>
+  <div id="container">
+  	<details open>
+      <summary><img src="../img/armenia.png" alt="">Spain LaLiga</summary> 
+      <div class="inside">
+        <a href="#">Barcelona</a>
+        <a href="#">Sevilla</a>
+        <a href="#">Granada</a>
+      </div>
+    </details>
+  <details>
+      <summary><img src="../img/america.png" alt="">Spain LaLiga</summary>
+      <div class="inside">
+        <a href="#">Barcelona</a>
+        <a href="#">Sevilla</a>
+        <a href="#">Granada</a>
+      </div>
+    </details>
+  <details>
+      <summary><img src="../img/argentina.png" alt="">Spain LaLiga</summary>
+      <div class="inside">
+        <a href="#">Barcelona</a>
+        <a href="#">Sevilla</a>
+        <a href="#">Granada</a>
+      </div>
+    </details>
+  </div>
+  <div>
+    <span id="open" style="cursor: pointer;">Open / </span>
+    <span id="close" style="cursor: pointer;">Close</span>
+  </div>
+ </body>
+</html>

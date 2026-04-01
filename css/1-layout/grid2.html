@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Layout Base 2</title>
+    <style>
+      body {
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      .container {
+        display: grid;
+        grid-template-columns: 15% 1fr;
+        grid-template-rows: 60px 1fr 60px;
+        height: 100vh;
+        gap: 10px;
+        padding: 10px;
+        box-sizing: border-box;
+      }
+      .header, .footer {
+        grid-column: span 2;/* the same below (1 start cell 4 end cell)*/
+        /* grid-column: 1 / 4; */ 
+      }
+
+      .item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        border: 1px solid #ddd;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item header">Header</div>
+      <div class="item sidebar">Sidebar</div>
+      <div class="item content">Content</div>
+      <div class="item footer">Footer</div>
+    </div>
+  </body>
+</html>

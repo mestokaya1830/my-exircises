@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Accordion Checkbox</title>
+<style type="text/css">
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+#ac-container{
+	width: 60%;
+	margin-top:10px;
+	padding: 5px;
+	border-radius: 4px;
+	background-color: #888;
+}
+label{
+	padding: 5px 20px;
+	position: relative;
+	z-index: 20;
+	display: block;
+	height: 30px;
+	cursor: pointer;
+	line-height: 33px;
+	font-size: 19px;
+	background-color:#fff;
+  border-bottom:1px solid #444;
+  margin-bottom:1px;
+}
+label:before{
+	content: "\2771";
+	position: absolute;
+	right:15px;
+	top:5px;
+}
+label:hover{
+  color:#000;
+}
+.ac{
+	background: rgba(255, 255, 255, 0.5);
+	margin-top: -1px;
+	overflow: hidden;
+	height: 0px;
+	position: relative;
+	z-index: 10;
+	transition:height 0.3s ease-in-out;
+}
+.ac p{
+	font-style: italic;
+	color: #777;
+	line-height: 23px;
+	font-size: 14px;
+	padding: 20px;
+}
+input{
+	display: none;
+}
+input:checked + label{
+	background: #03C74A;
+	color: #fff;
+}
+input:checked + label:before{
+  transform:rotate(90deg);
+}
+input:checked ~ .ac{
+	height: 140px;
+	transition:height 0.5s ease-in-out;
+}
+</style>
+<script>
+	window.onload = function() {
+		
+	}
+</script>
+</head>
+<body>
+  <h1>Accordion Checkbox</h1>
+  <section id="ac-container">
+    <div>
+      <input id="ac-1" type="checkbox" checked />
+      <label for="ac-1">About us</label>
+      <article class="ac">
+        <p>Some content... </p>
+      </article>
+    </div>
+		<div>
+		<input id="ac-2" type="checkbox" />
+		<label for="ac-2">How we work</label>
+		<article class="ac">
+			<p>Some content... </p>
+		</article>
+	</div>
+  	<div>
+		<input id="ac-3" type="checkbox" />
+		<label for="ac-3">How we work</label>
+		<article class="ac">
+			<p>Some content... </p>
+		</article>
+	</div>
+	</section>
+</body>
+</html>

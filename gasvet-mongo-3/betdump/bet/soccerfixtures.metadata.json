@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"},{"v":{"$numberInt":"2"},"key":{"AwayTeam":{"$numberInt":"1"}},"name":"AwayTeam_1"},{"v":{"$numberInt":"2"},"key":{"HomeTeam":{"$numberInt":"1"}},"name":"HomeTeam_1"}],"uuid":"adb40b13e22046d6a02958035a36d580","collectionName":"soccerfixtures","type":"collection"}

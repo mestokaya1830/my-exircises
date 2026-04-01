@@ -1,0 +1,29 @@
+USER INFO--------------------------------------------
+w                          // current user loign etc info
+who                        // current user
+whoami                     // current user
+uptime                     // all user info
+cat /etc/passwd            // all user info
+
+ADD NEW USER-------------------------------------------
+sudo su                    // switch to root user  (super user start with #) than
+adduser username           // add new user
+usermod -aG sudo username  // add existing user to sudo group
+groups username            // check new user group's
+su - username              // switch to sudo user
+logout                     // logout current user
+
+
+
+DELETE USER--------------------------------------------------
+killall -TERM -u username  // delete user proccess
+userdel -f username        // delete user
+is username                // check user exisit or not after delete
+
+
+
+CHAGNE USER PASSWORD------------------------------------------
+sudo passwd               // change user password
+
+
+

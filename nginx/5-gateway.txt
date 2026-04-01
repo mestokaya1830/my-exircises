@@ -1,0 +1,51 @@
+sudo apt update
+sudo apt install nginx
+
+create your project all microservices and run with different ports
+sudo touch /etc/nginx/sites-available/default
+
+upstream products {
+	server 127.0.0.1:3001
+}
+upstream orders {
+	server 127.0.0.1:3002
+}
+upstream customers {
+	server 127.0.0.1:3003
+}
+server {
+       listen 80;
+       listen [::]:80;
+
+       server_name main;
+
+       root /var/www/html;
+       index index.html;
+
+       location / {
+       		proxy_pass http://localhost:3000/
+       }
+       location /products/ {
+       		proxy_pass http://products/
+       }
+       location /orders/ {
+       		proxy_pass http://orders/
+       }
+       location /customers/ {
+       		proxy_pass http://customers/
+       }
+}
+
+
+sudo service nginx restart
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./public/leaflet.css" />
+    <link
+      href="https://cdn.osmbuildings.org/4.1.1/OSMBuildings.css"
+      rel="stylesheet"
+    />
+    <script src="./public/leaflet.js"></script>
+    <script src="https://cdn.osmbuildings.org/4.1.1/OSMBuildings.js"></script>
+
+    <style>
+      #map {
+        width: 100vw;
+        height: 100vh;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+
+    <script>
+      var map = new OSMBuildings({
+        container: "map",
+        position: { latitude: 37.065842, longitude: 37.376080 },
+        zoom: 16,
+        minZoom: 15,
+        maxZoom: 20,
+        attribution:
+          '© Data <a href="https://openstreetmap.org/copyright/">OpenStreetMap</a> © Map <a href="https://osmbuildings.org/copyright/">OSM Buildings</a>',
+      });
+
+      let aerial = map.addMapTiles("https://tile-a.openstreetmap.fr/hot/{z}/{x}/{y}.png");
+      map.addGeoJSONTiles(
+        "https://{s}.data.osmbuildings.org/0.2/59fcc2e8/tile/{z}/{x}/{y}.json"
+      )
+    </script>
+  </body>
+</html>
